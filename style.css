@@ -11,6 +11,19 @@
     --secondary-color:#60A5FA;    
     --primary-lite:#FEF3C7;
 }
+body{
+    position: relative;
+}
+
+body::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url(/img/minion.jpg) no-repeat center center/cover;
+    opacity:.5;
+    z-index: -1;
+}
 
 h1#main-heading{
     font-size: 2.5rem;
@@ -49,8 +62,13 @@ textarea{
     cursor: pointer;
 }
 
+#btn-translate:hover{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
 div#output-heading{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     max-width: 50vw;
     width: 100vw;
     margin: 1rem auto;
@@ -82,3 +100,16 @@ div#output-heading{
     border: 1px solid var(--secondary-color);
 
 }
+
+
+@media screen and (max-width:550px) {
+    textarea, #outputBox{
+        width: 80vw;
+    }
+    
+    #btn-translate{
+        width:60vw ;
+        font-size:1.3rem ;
+    }
+}
+
